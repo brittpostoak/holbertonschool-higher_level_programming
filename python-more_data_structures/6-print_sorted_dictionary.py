@@ -2,5 +2,12 @@
 
 def print_sorted_dictionary(a_dictionary):
 
-    for i in sorted(a_dictionary):
-    print('{}: {}'.format(i, a_dictionary[i]))
+    if a_dictionary is None:
+        return
+    keys = list(a_dictionary.keys())
+    keys.sort()  # sorts keys list
+    # creates new dictionary
+    sorted_dict = {x: a_dictionary[x] for x in keys}
+
+    for key in sorted_dict:
+        print("{}: {}".format(key, sorted_dict[key]))
