@@ -1,10 +1,3 @@
 #!/usr/bin/python3
-
-def multiply_list_map(my_list=[], number=0):
-
-    y=[]
-    for i in my_list:
-        y.append(i*multiplier)
-    return y
-
-print(multiply_list_by(my_list,10))
+def mutiply_list_map(my_list=[], number=0):
+    return list(map(lambda x: x * number, my_list))
