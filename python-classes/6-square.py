@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""creates class Square with
-private instance attribute size and position and
-public instance methods to calculate area and print square"""
+"""creates class Square w
+private instance attribute size and position to calculate area and print square"""
 
 
 class Square:
-    """defines class with private instance attributes size and position
-and public instance methods to calculate area and print square."""
+    """defines class w private instance attributes size and position to calculate area and print square."""
 
     def __init__(self, size=0, position=(0, 0)):
         """instantiates attribute size to 0 and position to (0, 0)"""
