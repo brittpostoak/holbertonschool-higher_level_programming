@@ -1,6 +1,4 @@
-""" Unitest for max_integer """
-
-import unittest
+mport unittest
 max_integer = __import__("6-max_integer").max_integer
 
 
@@ -39,4 +37,5 @@ class TestMaxInteger(unittest.TestCase):
     def test_empty_list(self):
         """ Empty list """
         test_list = []
-        self.assertEqual(max_integer(test_list), None)
+        self.assertEqual(maxclear
+ls
