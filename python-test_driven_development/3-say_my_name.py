@@ -5,25 +5,19 @@
 
 
 def say_my_name(first_name, last_name=""):
-	  """
-    Args:
-        first_name: string
-        last_name: string
-    Raises:
-        TypeError:
-                 * first_name must be a string
-                 * last_name must be a string
-    Returns:
-        Prints the first name and last name
     """
-	msnErr1 = "first_name must be a string"
-	msnErr2 = "last_name must be a string"
+        Args:
+            first_name (string)
+            last_name (string)
 
-	if isinstance(first_name, str) is not True:
-		raise TypeError(msnErr1)
+        Raises:
+            TypeError: if first and last name aren't strings
+        """
 
-	if isinstance(last_name, str) is not True:
-		raise TypeError(msnErr2)
+    if not isinstance(first_name, str):
+        raise TypeError("first_name must be a string")
 
-	else:
-		print("My name is {} {}".format(first_name, last_name))
+    if not isinstance(last_name, str):
+        raise TypeError("last_name must be a string")
+
+    print("My name is {} {}".format(first_name, last_name))
