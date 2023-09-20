@@ -1,0 +1,26 @@
+3-say_my_name Test File
+
+    Function:
+        >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    Test: First and last names are strings
+    	>>> say_my_name("first name", "last name")
+ 	My name is first name last name.
+
+    Test: First name is an int
+   	>>> say_my_name(18, "last name")
+ 	Traceback (most recent call last):
+        ...
+ 	TypeError: first_name must be a string
+
+    Test: Last name is an int
+        >>> say_my_name("first name", 18)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+    Test: Two arguments missing
+        >>> say_my_name()
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
