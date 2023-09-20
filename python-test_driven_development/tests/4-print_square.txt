@@ -1,0 +1,36 @@
+4-print_square Test File
+
+    Function:
+        >>> print_square = __import__('4-print_square').print_square
+
+    Test: Print Square(4)
+    	>>> print_square(4)
+    	####
+    	####
+    	####
+    	####
+
+    Test: Print Square(10)
+  	>>> print_square(10)
+	##########
+   	##########
+  	##########
+	##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+    
+     Test: Zero
+	>>> print_square(0)
+
+     Test: One
+	>>> print_square(1)
+	#
+     Test: Negative
+	>>> print_square(-1)
+	Traceback (most recent call last):
+        ...
+	ValueError: size must be >= 0
