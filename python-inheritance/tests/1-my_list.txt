@@ -3,45 +3,41 @@
    Function:
 	>>> MyList = __import__('1-my_list').MyList
 
-	>>> issubclass(MyList, list)
-	True
+   Test: Elements are positive integers.
+	>>> my_list = MyList([2, 1, 3])
+	>>> my_list.print_sorted()
+	[1, 2, 3]
 
-	>>> tmp_list = MyList()
+   Test: Elements of list are negative integers.
+	>>> my_list = MyList([-2, -1, -3])
+	>>> my_list.print_sorted()
+	[-3, -2, -1]
 
-	>>> tmp_list.append(1)
+   Test: Element in the list is negative.
+	>>> my_list = MyList([2, -1, 3])
+	>>> my_list.print_sorted()
+	[-1, 2, 3]
 
-	>>> tmp_list.append(4)
+   Test: Only one element.
+	>>> my_list = MyList([2])
+	>>> my_list.print_sorted()
+	[2]
 
-	>>> tmp_list.append(2)
+   Test: No elements.
+	>>> my_list = MyList([])
+	>>> my_list.print_sorted()
+	[]
 
-	>>> tmp_list.append(3)
-
-	>>> tmp_list.append(6)
-
-	>>> tmp_list.append(5)
-
-	>>> print(tmp_list)
-	[1, 4, 2, 3, 6, 5]
-
-	>>> tmp_list.print_sorted()
-	[1, 2, 3, 4, 5, 6]
-
-	>>> print(tmp_list)
-	[1, 4, 2, 3, 6, 5]
-
-   Test: Sorted
-	>>> def test_i(tests=[]):
-   	for test in tests:
-        try:
-            test.print_sorted()
-        except Exception as e:
-            print("[{}] {}".format(e.__class__.__name__, e))
-
-
-	>>> tests = [MyList([1, "a"]), MyList(["a", "b", "c"]), None, MyList([[1], [2]]), MyList([1, -1, 3.4])]
-	>>> test_i(tests)
-	[TypeError] unorderable types: str() < int()
+   Test: Only strings.
+	>>> my_list = MyList(["a", "b", "c"])
+	>>> my_list.print_sorted()
 	['a', 'b', 'c']
-	[AttributeError] 'NoneType' object has no attribute 'print_sorted'
-	[[1], [2]]
-	[-1, 1, 3.4]
+
+   Test: Without changes to original list.
+	>>> my_list = MyList([2, 1, 3])
+	>>> print(my_list)
+	[2, 1, 3]
+	>>> my_list.print_sorted()
+	[1, 2, 3]
+	>>> print(my_list)
+	[2, 1, 3]
