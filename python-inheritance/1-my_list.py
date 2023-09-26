@@ -6,10 +6,12 @@ Class MyList that inherits from list.
 
 class MyList(list):
     """
-    Begin class - MyList.
+    Begins class - MyList.
     """
     def print_sorted(self):
         """
         Prints the list, but sorted (ascending sort).
         """
-        print("{}".format(sorted(self)))
+        copy_list = self.copy()
+        copy_list.sort()
+        print(copy_list)
