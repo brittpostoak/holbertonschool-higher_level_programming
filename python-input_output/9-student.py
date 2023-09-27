@@ -2,15 +2,17 @@
 """
 Class Student that defines a student by age, first and last name.
 """
-save_obj = __import__('7-save_to_json_file').save_to_json_file
-creat_obj = __import__('8-load_from_json_file').load_from_json_file
-import sys
 
-try:
-    l = creat_obj("add_item.json")
-except FileNotFoundError:
-    l = []
-for i in range(1, len(sys.argv)):
-    l.append(sys.argv[i])
 
-save_obj(l, "add_item.json")
+class Student():
+    """Class to define student"""
+
+    def __init__(self, first_name, last_name, age):
+        """Begins function - initialize instance."""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        """Begins function - to json"""
+        return self.__dict__
