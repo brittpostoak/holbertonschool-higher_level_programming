@@ -13,6 +13,18 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
-        """To JSON"""
-        return self.__dict__
+    def to_json(self, attrs=None):
+        """Begins function - to json"""
+        if attrs is None:
+            return self.__dict__
+        else:
+            new_dict = {}
+            for key, value in self.__dict__.items():
+                if key in attrs:
+                    new_dict[key] = value
+            return new_dict
+
+    def reload_from_json(self, json):
+        """Begins function - reload from json"""
+        for key, value in json.items():
+            setattr(self, key, value)
