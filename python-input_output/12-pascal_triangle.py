@@ -4,22 +4,24 @@ Returns list of lists of integers representing Pascal’s triangle.
 """
 
 
-class Student:
-    """Begins function - print triangle"""
-
-    def __init__(self, first_name, last_name, age):
-        """Constructor"""
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self, attrs=None):
-        """To JSON"""
-        if attrs is None:
-            return self.__dict__
-        d = {}
-        if type(attrs) == list and all(type(i) == str for i in attrs):
-            for el in attrs:
-                if el in self.__dict__:
-                    d[el] = self.__dict__[el]
-            return d
+def pascal_triangle(n):
+    """Begins function - pascal traingle"""
+    pascal_triangle = []
+    previous = [1]
+    if n <= 0:
+        return pascal_triangle
+    for row_number in range(n):
+        rowlist = []
+        if row_number == 0:
+            rowlist = [1]
+        else:
+            for i in range(row_number + 1):
+                if i == 0:
+                    rowlist.append(0 + previous[i])
+                elif i == (row_number):
+                    rowlist.append(previous[i - 1] + 0)
+                else:
+                    rowlist.append(previous[i - 1] + previous[i])
+        previous = rowlist
+        pascal_triangle.append(rowlist)
+    return pascal_triangle
