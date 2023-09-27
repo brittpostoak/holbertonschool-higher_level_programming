@@ -5,8 +5,8 @@ Function that creates Object from JSON file.
 import json
 
 
-def from_json_string(my_str):
-    """
-    Begins function - from_json_string.
-    """
-    return json.loads(my_str)
+def load_from_json_file(filename):
+    """Begins function - load from json"""
+    import json
+    with open(filename, "r") as file:
+        return json.load(file)
