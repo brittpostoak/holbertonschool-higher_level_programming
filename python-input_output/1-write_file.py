@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-Function that writes string to text file UTF8 and returns number of characters.
+Function that writes string to text file UTF8 and returns 
+number of characters.
 """
 
 
-def number_of_lines(filename=""):
+def write_file(filename="", text=""):
     """
-    Begins function - number_of_lines.
+    Begins function - write file.
     """
-    f = open(filename, 'r')
-    for index, line in enumerate(f):
-        pass
-    return index + 1
+    with open(filename, "w", encoding="UTF-8") as file:
+        file.write(text)
+
+    return len(text)
