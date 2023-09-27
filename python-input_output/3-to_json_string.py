@@ -4,9 +4,7 @@ Function that returns JSON representation of an object.
 """
 
 
-def write_file(filename="", text=""):
-    """
-    Begins function - write_file.
-    """
-    with open(filename, encoding='utf-8', mode='w') as f:
-        return f.write(text)
+def to_json_string(my_obj):
+    """Begins function - to json string"""
+    import json
+    return json.dumps(my_obj, ensure_ascii=False)
