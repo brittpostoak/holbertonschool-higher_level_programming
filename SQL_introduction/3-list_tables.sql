@@ -1,1 +1,2 @@
-i
+-- List database tables
+SHOW TABLES;

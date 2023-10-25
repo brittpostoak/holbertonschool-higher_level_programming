@@ -1,1 +1,2 @@
-i
+-- MySQL command Show
+SHOW databases;
